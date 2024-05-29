@@ -25,7 +25,8 @@ console.log("extractFirstTwo([1, 2, 3]) : " + extractFirstTwo([1, 2, 3]));
  */
 
 //const extractRest = (array) => { let [arg1, ...args] = array; return args; }
-const extractRest = ([arg1, ...args]) => args
+//const extractRest = ([arg1, ...args]) => args
+const extractRest = ([, ...args]) => args
 
 console.log("extractRest([1, 2, 3]) : " + extractRest([1, 2, 3]));
 
