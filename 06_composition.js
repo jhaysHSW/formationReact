@@ -31,8 +31,9 @@ console.log("push([1, 2, 3], 4) : " + push([1, 2, 3], 4));
  * ex: {a: 1, b: 2}, {c: 3, d: 4} => {a: 1, b: 2, c: 3, d: 4}
  */
 
-const merge = (obj1, obj2) => {return {...obj1}, {...obj2}}
+const merge = (obj1, obj2) => {return {...obj1, ...obj2}}
 
+console.log("merge({a: 1, b: 2}, {c: 3, d: 4}).b : " + merge({a: 1, b: 2}, {c: 3, d: 4}).b);
 console.log("merge({a: 1, b: 2}, {c: 3, d: 4}).d : " + merge({a: 1, b: 2}, {c: 3, d: 4}).d);
 
 /**
