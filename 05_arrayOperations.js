@@ -13,6 +13,7 @@
 const multiplyByTwo = (array) => array.map((x) => 2 * x) 
 
 console.log("multiplyByTwo([0, 1, 2]) : " + multiplyByTwo([0, 1, 2]));
+console.log("multiplyByTwo([]) : " + multiplyByTwo([]));
 
 /**
  * Utiliser la fonction .filter sur le tableau passé en paramètre
@@ -41,6 +42,7 @@ console.log("filterNameStartByA([A, AA, BA]) : " + filterNameStartByA(["A", "AA"
 const sum = (array) => array.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
 
 console.log("sum([1, 2, 3]) : " + sum([1, 2, 3]));
+console.log("sum([]) : " + sum([]));
 
 /**
  * Utiliser la fonction .find sur le tableau passé en paramètre
