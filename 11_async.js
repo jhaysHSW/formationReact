@@ -57,13 +57,21 @@ usingAwait(() => { console.log("await"); });
 const axios = require("axios");
 
 const apiResponse = async (url) => {
-    axios({
+    /*axios({
         method: 'get',
         url: url,
         responseType: 'json'
-      }).then((res) => console.log(res.data));
+      }).then((res) => console.log(res.data));*/
+
+      const res = await axios({
+        method: 'get',
+        url: url,
+        responseType: 'json'
+      });
+      return res.data;
 }
 
-console.log("apiResponse() : " + apiResponse("https://jsonplaceholder.typicode.com/todos/1"));
+apiResponse("https://jsonplaceholder.typicode.com/todos/1");
+
 
 module.exports = {usingThen, usingAwait, apiResponse};
