@@ -33,8 +33,8 @@ usingThen(() => { console.log("then"); });
  *   - ne pas utiliser .then
  */
 
-const usingAwait = (cb) => {
-    //let result = await sleep();
+const usingAwait = async(cb) => {
+    const result = await sleep();
     cb();
 }
 
@@ -54,11 +54,16 @@ usingAwait(() => { console.log("await"); });
  */
 
 //décommentez la ligne suivante une fois le package installé
-//const axios = require("axios");
+const axios = require("axios");
 
 const apiResponse = async (url) => {
-
+    axios({
+        method: 'get',
+        url: url,
+        responseType: 'json'
+      }).then((res) => console.log(res.data));
 }
 
+console.log("apiResponse() : " + apiResponse("https://jsonplaceholder.typicode.com/todos/1"));
 
 module.exports = {usingThen, usingAwait, apiResponse};

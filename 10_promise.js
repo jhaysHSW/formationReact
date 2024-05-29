@@ -13,6 +13,6 @@ const sleep = () => {
       });
 };
 
-console.log("sleep() : " + sleep().then((x) => console.log(x)));
+//console.log("sleep() : " + sleep().then((x) => console.log(x)));
 
 module.exports = {sleep};
