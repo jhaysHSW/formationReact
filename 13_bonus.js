@@ -25,7 +25,11 @@ ex: la pomme est rouge et la banane est jaune
  */
 
 const countWords = (sentence) => {
+  let words = sentence.split(' ');
+  
+  return words;
 };
+
 console.log(countWords("la pomme est rouge et la banane est jaune"));
 
 /**
