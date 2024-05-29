@@ -12,7 +12,14 @@
  * 
  */
 const usingThen = (cb) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve();
+        }, 2000).then(() => cb);
+      });
 }
+
+console.log("usingThen() : " + usingThen(() => { console.log("youpi"); }));
 
 /**
  * Créez une fonction asynchrone qui attend 2 seconde puis execute le callback passé en paramètre
