@@ -34,12 +34,11 @@ usingThen(() => { console.log("then"); });
  */
 
 const usingAwait = async(cb) => {
-    const result = await sleep();
+    /*const result =*/ await sleep();
     cb();
 }
 
 usingAwait(() => { console.log("await"); });
-
 
 /**
  * Créez une fonction asynchrone qui effectue un appel api vers l'url passé en paramètre
@@ -63,15 +62,25 @@ const apiResponse = async (url) => {
         responseType: 'json'
       }).then((res) => console.log(res.data));*/
 
-      const res = await axios({
+      /*const res = await axios({
         method: 'get',
         url: url,
         responseType: 'json'
       });
-      return res.data;
+      return res.data;*/
+
+      try {
+        return (await axios.get(url)).data;        
+      } catch(e) {
+        console.error(e);
+        return e;
+      }
 }
 
-apiResponse("https://jsonplaceholder.typicode.com/todos/1");
+//apiResponse("https://jsonplaceholder.typicode.com/todos/1");
 
+(async() => {
+  console.log(await apiResponse("https://jsonplaceholder.typicode.com/todos/1"));
+})()
 
 module.exports = {usingThen, usingAwait, apiResponse};
