@@ -20,7 +20,7 @@ const usingThen = (cb) => {
     sleep().then(cb);
 }
 
-usingThen(() => { console.log("then"); });
+//usingThen(() => { console.log("then"); });
 
 /**
  * Créez une fonction asynchrone qui attend 2 seconde puis execute le callback passé en paramètre
@@ -38,7 +38,7 @@ const usingAwait = async(cb) => {
     cb();
 }
 
-usingAwait(() => { console.log("await"); });
+//usingAwait(() => { console.log("await"); });
 
 /**
  * Créez une fonction asynchrone qui effectue un appel api vers l'url passé en paramètre
@@ -79,8 +79,8 @@ const apiResponse = async (url) => {
 
 //apiResponse("https://jsonplaceholder.typicode.com/todos/1");
 
-(async() => {
+/*(async() => {
   console.log(await apiResponse("https://jsonplaceholder.typicode.com/todos/1"));
-})()
+})()*/
 
 module.exports = {usingThen, usingAwait, apiResponse};
